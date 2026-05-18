@@ -17,16 +17,16 @@ client = AzureOpenAI(
 )
 
 messages = [
-        {
-            "role": "user",
-            "content": "Question: ‘Who are you?’"
-        }
-    ]
+    {
+        "role": "user",
+        "content": "Question: Who are you?"
+    }
+]
 
 answer = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=messages
-    ).choices[0].message.content
+    model="gpt-4o-mini",
+    messages=messages
+).choices[0].message.content
 
 print("Question: Who are you?")
 print("Answer:", answer)
